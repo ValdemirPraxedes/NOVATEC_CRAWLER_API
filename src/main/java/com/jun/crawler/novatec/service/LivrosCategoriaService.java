@@ -40,6 +40,7 @@ public class LivrosCategoriaService extends Service {
 	    	String paginas = campos[3];
 	    	String preco = campos[4];
 	    	
+	    	livro.setUrl(elementLivro.select("a").attr("href"));
 			livro.setAutor(elementLivro.select("font > a:nth-child(4)").text());
 			livro.setCapa_url(elementLivro.select("img").attr("src"));
 			livro.setIsbn(ISBN);

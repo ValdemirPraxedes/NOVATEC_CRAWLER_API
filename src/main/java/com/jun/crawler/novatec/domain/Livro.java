@@ -11,7 +11,7 @@ public class Livro {
 	private String isbn;
 	private int paginas;
 	private double preco;
-	
+	private int ano;
 	
 	public String getTitulo() {
 		return titulo;
@@ -68,5 +68,17 @@ public class Livro {
 	
 	public void setPreco(String preco) {
 		this.preco = Double.parseDouble(preco.replace("R$", "").replace(",", ".").trim());
+	}
+	
+	public int getAno() {
+		return ano;
+	}
+	
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	
+	public void setAno(String ano) {
+		this.ano = Integer.parseInt(ano.trim());
 	}
 }

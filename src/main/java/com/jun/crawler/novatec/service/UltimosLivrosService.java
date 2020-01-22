@@ -13,7 +13,7 @@ import com.jun.crawler.novatec.domain.Livro;
 import com.jun.crawler.novatec.repositorio.SiteRepositorio;
 import com.jun.crawler.novatec.service.enums.UltimosLancamentos;
 
-public class UltimosLivrosService extends Service {
+public class UltimosLivrosService extends LivrosService {
 	
 	public UltimosLivrosService(String url) throws MalformedURLException {
 		super(url);

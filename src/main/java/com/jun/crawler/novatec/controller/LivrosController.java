@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jun.crawler.novatec.domain.Livro;
+import com.jun.crawler.novatec.service.LivroDetalhado;
 import com.jun.crawler.novatec.service.LivrosCategoriaService;
 import com.jun.crawler.novatec.service.UltimosLivrosService;
 
@@ -33,6 +34,17 @@ public class LivrosController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+	
+	@GetMapping("/livro")
+	public Livro livro(@RequestParam(value="livro")String livro) {
+		try {
+			return new LivroDetalhado("https://novatec.com.br/livros/"+livro).livroDetalhado();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 }

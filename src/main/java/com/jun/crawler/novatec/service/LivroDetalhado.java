@@ -43,9 +43,9 @@ public class LivroDetalhado extends LivroService {
 		livro.setAno(Regex.Cut(texto, regexAno));
 		livro.setIsbn(Regex.Cut(texto, regexISBN));
 		livro.setPreco(Regex.Cut(texto, regexPreco));
-		livro.setAutor(Regex.Cut(texto, regexAutor));
-		livro.setPaginas(Regex.Cut(texto, regexPaginas));
-		livro.setDescricao(table.select("#mais").text());
+		livro.setAutor(Regex.Cut(texto, regexAutor).replace("ISBN", "").trim());
+		livro.setPaginas(Regex.Cut(texto, regexPaginas).replace("Páginas:", "").trim());
+		livro.setDescricao(table.select("#mais").text().replace("Ver menos ▲", ""));
 		
 		
 		return livro;
